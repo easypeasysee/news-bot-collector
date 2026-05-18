@@ -5,6 +5,8 @@ News Bot Collector v2 - 데이터 추출 가이드 적용
 """
 
 
+
+
 import os
 import re
 import uuid
@@ -12,13 +14,19 @@ from datetime import datetime, timedelta, timezone
 from html import unescape
 
 
+
+
 import requests
 from supabase import create_client
+
+
 
 
 # ============================================
 # 설정
 # ============================================
+
+
 
 
 NAVER_CLIENT_ID = os.environ.get("NAVER_CLIENT_ID", "")
@@ -28,16 +36,13 @@ SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY", "")
 
 
-DAYS_LOOKBACK = int(os.environ.gt("DAYS_LOOKBACK", "3"))
+
+
+DAYS_LOOKBACK = int(os.environ.gt("DAYS_LOOKBACK", "1"))
+
+
 
 
 # 메인 키워드 - 구문 검색 (따옴표 포함)
 MAIN_KEYWORDS = [
     '"마인드카페"', '"마인드카페 센터"', '"마인드카페 상담센터"', '"마인드카페 EAP"',
-    '"아토머스"', '"마인드비타"', '"마인드잇슈"'
-]
-
-
-# 서브 키워드 - 뉴스만
-SUB_KEYWORDS = [
-    "정신건강", "심리상담", "심리치료", "심리검사", "우울증", "ADHD",
