@@ -38,7 +38,7 @@ SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY", "")
 
 
 
-DAYS_LOOKBACK = int(os.environ.gt("DAYS_LOOKBACK", "1"))
+DAYS_LOOKBACK = int(os.environ.get("DAYS_LOOKBACK", "1"))
 
 
 
@@ -46,3 +46,5 @@ DAYS_LOOKBACK = int(os.environ.gt("DAYS_LOOKBACK", "1"))
 # 메인 키워드 - 구문 검색 (따옴표 포함)
 MAIN_KEYWORDS = [
     '"마인드카페"', '"마인드카페 센터"', '"마인드카페 상담센터"', '"마인드카페 EAP"',
+    '"아토머스"', '"마인드비타"', '"마인드잇슈"'
+]
